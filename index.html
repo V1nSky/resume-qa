@@ -15,65 +15,63 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { transition: background-color 0.3s ease, color 0.3s ease; }
         .bento-card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease, border-color 0.3s ease; }
         .bento-card:hover { transform: translateY(-2px); }
-        details > summary { list-style: none; cursor: pointer; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] .chevron { transform: rotate(180deg); }
-        .chevron { transition: transform 0.25s ease; }
+        .soft-grid { background-image: radial-gradient(circle at 1px 1px, rgba(59,130,246,.18) 1px, transparent 0); background-size: 24px 24px; }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 antialiased p-4 md:p-10 min-h-screen">
 
-    <main class="max-w-4xl mx-auto space-y-6 relative">
+    <main class="max-w-5xl mx-auto space-y-6 relative">
 
-        <!-- Theme Toggle -->
-        <button id="themeToggle" class="absolute top-0 right-0 p-2 md:-mt-4 md:-mr-4 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all text-slate-600 dark:text-slate-300 flex items-center justify-center w-10 h-10">
+        <button id="themeToggle" class="absolute top-0 right-0 p-2 md:-mt-4 md:-mr-4 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all text-slate-600 dark:text-slate-300 flex items-center justify-center w-10 h-10 z-10" aria-label="Переключить тему">
             <svg id="sunIcon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
             <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
         </button>
 
-        <!-- Header -->
-        <header class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm hover:shadow-md flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div class="flex items-center gap-5 md:gap-6">
-                <div class="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full bg-slate-200 dark:bg-slate-800 border-2 border-blue-500 overflow-hidden flex items-center justify-center">
-                    <img src="https://cdn-edge.kwork.ru/files/avatar/large/56/5607748-10.jpg" alt="Анатолий" class="w-full h-full object-cover">
+        <header class="bento-card soft-grid bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.75rem] p-6 md:p-8 shadow-sm hover:shadow-md overflow-hidden">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="flex items-center gap-5 md:gap-6">
+                    <div class="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full bg-slate-200 dark:bg-slate-800 border-2 border-blue-500 overflow-hidden flex items-center justify-center shadow-lg shadow-blue-500/10">
+                        <img src="https://cdn-edge.kwork.ru/files/avatar/large/56/5607748-10.jpg" alt="Анатолий" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-[11px] font-bold uppercase tracking-wider mb-3 border border-blue-100 dark:border-blue-800/60">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                            Open to Junior QA roles
+                        </div>
+                        <h1 class="text-2xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Кобелев Анатолий</h1>
+                        <p class="text-base md:text-xl text-slate-600 dark:text-slate-300 font-semibold mt-1">Junior QA Engineer</p>
+                        <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-2 max-w-2xl">
+                            Manual QA · API testing · Bug reports · Checklists · Python automation basics · Developer background
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Кобелев Анатолий</h1>
-                    <p class="text-base md:text-lg text-slate-500 dark:text-slate-400 font-medium">Junior QA Engineer / QA Automation Trainee</p>
-                    <p class="text-xs md:text-sm text-slate-400 dark:text-slate-500 mt-1 md:mt-2 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                        Ручное тестирование · API · баг-репорты · Python · технический бэкграунд
-                    </p>
+                <div class="flex flex-row md:flex-col gap-2 w-full md:w-auto">
+                    <a href="https://t.me/vqns7" target="_blank" class="flex-1 text-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-2.5 rounded-xl text-sm font-semibold hover:opacity-90 transition">
+                        Написать мне
+                    </a>
+                    <a href="https://v1nsky.github.io/resume-dev/" target="_blank" class="flex-1 text-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                        Developer background
+                    </a>
                 </div>
-            </div>
-            <div class="flex flex-row md:flex-col gap-2 w-full md:w-auto">
-                <a href="https://t.me/vqns7" target="_blank" class="flex-1 text-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-2.5 rounded-xl text-sm font-semibold hover:opacity-90 transition">
-                    Написать мне
-                </a>
-                <a href="https://v1nsky.github.io/resume-dev/" target="_blank" class="flex-1 text-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-                    Dev Resume
-                </a>
             </div>
         </header>
 
-        <!-- About + QA Stack -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <section class="bento-card md:col-span-2 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
                 <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-4">Обо мне как QA</h2>
                 <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                    Начинающий QA-инженер с опытом разработки небольших веб-сервисов, Telegram-ботов и backend-автоматизаций. 
-                    Понимаю, как продукт устроен со стороны пользователя, интерфейса, API, базы данных и бизнес-логики.
+                    Я Junior QA Engineer с техническим бэкграундом в разработке веб-сервисов, Telegram-ботов и backend-автоматизаций. Понимаю, как продукт устроен со стороны пользователя, интерфейса, API, базы данных и бизнес-логики.
                 </p>
                 <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Хочу развиваться в тестировании веб-приложений и backend-сервисов: составлять чек-листы, тест-кейсы, 
-                    баг-репорты, проверять API, воспроизводить ошибки и постепенно переходить в QA Automation на Python.
+                    Мой плюс как QA — я могу не только вручную пройти сценарий, но и глубже разобрать причину дефекта через DevTools, API-ответы, статусы, логику backend и базовые SQL-проверки. Цель — развиваться в Manual QA с уклоном в API и постепенно усиливать автоматизацию на Python.
                 </p>
             </section>
+
             <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
                 <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-4">QA-навыки</h2>
                 <div class="flex flex-wrap gap-2">
@@ -88,120 +86,88 @@
                     <span class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full text-xs font-medium">Git</span>
                     <span class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full text-xs font-medium">Python</span>
                     <span class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full text-xs font-medium">pytest basics</span>
-                    <span class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full text-xs font-medium">Linux basics</span>
+                    <span class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full text-xs font-medium">Playwright basics</span>
                 </div>
             </section>
         </div>
 
-        <!-- QA Focus -->
         <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
-                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">Что я проверяю</h2>
-                <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] md:text-xs font-bold rounded-lg border border-blue-100 dark:border-blue-800/50 uppercase tracking-wider">
-                    Manual QA
-                </span>
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">Готов брать задачи</h2>
+                <span class="px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[10px] md:text-xs font-bold rounded-lg border border-emerald-100 dark:border-emerald-800/50 uppercase tracking-wider">Junior-ready</span>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
-                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">UI / UX</h3>
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">Manual testing</h3>
                     <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
-                        <li>• формы, кнопки, состояния</li>
-                        <li>• адаптивность и вёрстка</li>
-                        <li>• понятность ошибок</li>
-                        <li>• браузерные проверки</li>
+                        <li>• проверка форм и user flows</li>
+                        <li>• адаптивность и браузеры</li>
+                        <li>• ошибки, пустые состояния, роли</li>
+                        <li>• smoke и regression checks</li>
                     </ul>
                 </div>
                 <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
                     <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">API / Backend</h3>
                     <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
-                        <li>• REST endpoints</li>
+                        <li>• Postman-запросы</li>
                         <li>• статусы и JSON-ответы</li>
-                        <li>• ошибки валидации</li>
-                        <li>• бизнес-логика</li>
+                        <li>• негативные сценарии</li>
+                        <li>• проверка бизнес-логики</li>
                     </ul>
                 </div>
                 <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
-                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">Документация</h3>
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">QA docs</h3>
                     <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
-                        <li>• баг-репорты в Jira</li>
-                        <li>• чек-листы проверок</li>
+                        <li>• баг-репорты в Jira-формате</li>
+                        <li>• чек-листы</li>
                         <li>• тест-кейсы</li>
-                        <li>• регрессионные списки</li>
+                        <li>• краткие отчёты по проверке</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio Cases -->
         <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
-                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">QA-кейсы на моих проектах</h2>
-                <span class="px-3 py-1 bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] md:text-xs font-bold rounded-lg border border-violet-100 dark:border-violet-800/50 uppercase tracking-wider">
-                    Portfolio
-                </span>
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">QA-кейсы на проектах</h2>
+                <span class="px-3 py-1 bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] md:text-xs font-bold rounded-lg border border-violet-100 dark:border-violet-800/50 uppercase tracking-wider">Portfolio</span>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- ZodiacOps -->
-                <div class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                <article class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
                     <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center gap-2.5">
-                            <span class="text-xl">♈</span>
-                            <span class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">ZodiacOps</span>
-                        </div>
+                        <div class="flex items-center gap-2.5"><span class="text-xl">♈</span><span class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">ZodiacOps</span></div>
                         <span class="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold rounded-md border border-blue-100 dark:border-blue-800/50 uppercase tracking-wider">QA Case</span>
                     </div>
-                    <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-                        AI-система для генерации, проверки, ревью, планирования и публикации Telegram-контента.
-                    </p>
-                    <ul class="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
-                        <li>✓ Проверка статусов draft / needs_review / approved / scheduled / published</li>
-                        <li>✓ Проверка Publishing Queue и защиты от повторной публикации</li>
-                        <li>✓ Проверка quality checks и ручного review workflow</li>
-                        <li>✓ Составление баг-репортов и задач в Jira</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-1.5 mt-4">
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full text-[10px] font-medium">FastAPI</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full text-[10px] font-medium">React</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full text-[10px] font-medium">Jira</span>
+                    <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">AI-система для генерации, проверки, ревью, планирования и публикации Telegram-контента.</p>
+                    <div class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <p><strong class="text-slate-800 dark:text-slate-200">Задача:</strong> проверить, что контент не публикуется случайно и проходит правильные статусы.</p>
+                        <p><strong class="text-slate-800 dark:text-slate-200">Проверял:</strong> draft / needs_review / approved / scheduled / published, Publishing Queue, Publish Now, retry, ручной review workflow.</p>
+                        <p><strong class="text-slate-800 dark:text-slate-200">Риск:</strong> повторная публикация, неправильные кнопки, публикация неподтверждённого контента.</p>
+                        <p><strong class="text-slate-800 dark:text-slate-200">Результат:</strong> оформлены баги и требования к publishing gates.</p>
                     </div>
-                </div>
+                </article>
 
-                <!-- LeadHunter -->
-                <div class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                <article class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
                     <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center gap-2.5">
-                            <span class="text-xl">🔍</span>
-                            <span class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">LeadHunter</span>
-                        </div>
+                        <div class="flex items-center gap-2.5"><span class="text-xl">🔍</span><span class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">LeadHunter</span></div>
                         <span class="px-2 py-0.5 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold rounded-md border border-green-100 dark:border-green-800/50 uppercase tracking-wider">SaaS</span>
                     </div>
-                    <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-                        Pet-проект для поиска и обработки лидов из Telegram с аккаунтами, нишами, экспортом и антибан-логикой.
-                    </p>
-                    <ul class="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
-                        <li>✓ Проверка user flows: аккаунты, источники, лиды, экспорт</li>
-                        <li>✓ Негативные сценарии авторизации и ошибок Telegram API</li>
-                        <li>✓ Проверка изоляции данных пользователей</li>
-                        <li>✓ Проверка CSV/XLSX экспорта</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-1.5 mt-4">
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full text-[10px] font-medium">FastAPI</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full text-[10px] font-medium">Telethon</span>
-                        <span class="bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full text-[10px] font-medium">SQLite</span>
+                    <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Pet-проект для поиска и обработки лидов из Telegram с аккаунтами, нишами, экспортом и антибан-логикой.</p>
+                    <div class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <p><strong class="text-slate-800 dark:text-slate-200">Задача:</strong> проверить ключевые сценарии Mini App и backend-логики.</p>
+                        <p><strong class="text-slate-800 dark:text-slate-200">Проверял:</strong> аккаунты, источники, лиды, экспорт CSV/XLSX, ошибки Telegram API, изоляцию данных.</p>
+                        <p><strong class="text-slate-800 dark:text-slate-200">Риск:</strong> потеря данных, неверный экспорт, смешивание пользовательских данных.</p>
+                        <p><strong class="text-slate-800 dark:text-slate-200">Результат:</strong> собраны сценарии для ручного тестирования и будущей регрессии.</p>
                     </div>
-                </div>
+                </article>
 
-                <!-- Global Dispatch -->
-                <div class="bento-card md:col-span-2 bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                <article class="bento-card md:col-span-2 bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
                     <div class="flex items-start justify-between gap-3 mb-4">
                         <div class="flex items-center gap-3">
                             <span class="text-2xl">🚛</span>
                             <div>
-                                <a href="https://mrmaxdispatch.com" target="_blank" class="font-semibold text-slate-900 dark:text-white text-sm md:text-base hover:text-violet-500 dark:hover:text-violet-400 transition-colors">
-                                    GLOBAL Dispatch <span class="text-[10px] text-slate-400 dark:text-slate-500 font-normal">↗</span>
-                                </a>
+                                <a href="https://mrmaxdispatch.com" target="_blank" class="font-semibold text-slate-900 dark:text-white text-sm md:text-base hover:text-violet-500 dark:hover:text-violet-400 transition-colors">GLOBAL Dispatch <span class="text-[10px] text-slate-400 dark:text-slate-500 font-normal">↗</span></a>
                                 <span class="text-xs text-slate-500 dark:text-slate-400 block mt-0.5">Коммерческий проект · корпоративный сайт + админ-панель</span>
                             </div>
                         </div>
@@ -210,7 +176,7 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <h3 class="font-bold text-slate-800 dark:text-slate-200 text-[10px] uppercase tracking-widest mb-2">Что можно тестировать</h3>
+                            <h3 class="font-bold text-slate-800 dark:text-slate-200 text-[10px] uppercase tracking-widest mb-2">Что проверял в проекте</h3>
                             <ul class="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
                                 <li>✓ формы заявок и отправку данных</li>
                                 <li>✓ мультиязычность EN / RU / UZ</li>
@@ -228,28 +194,43 @@
                             </ul>
                         </div>
                     </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">QA-артефакты</h2>
+                <span class="px-3 py-1 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-[10px] md:text-xs font-bold rounded-lg border border-amber-100 dark:border-amber-800/50 uppercase tracking-wider">In progress</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-2xl p-5 border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Checklist: GLOBAL Dispatch</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Заглушка. Скоро здесь будет чек-лист по формам, адаптиву, мультиязычности, админке и SEO-полям.</p>
+                </div>
+                <div class="rounded-2xl p-5 border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Test cases: форма заявки</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Заглушка. Будут позитивные, негативные и boundary-сценарии для заявки клиента.</p>
+                </div>
+                <div class="rounded-2xl p-5 border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Postman / API checks</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Заглушка. Будет пример коллекции или список endpoint-проверок: статусы, JSON, валидация, ошибки.</p>
+                </div>
+                <div class="rounded-2xl p-5 border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Regression: Publishing Queue</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Заглушка. Будет регрессионный список для статусов, Publish Now, retry, double-publish prevention.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Example Bug Report -->
         <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
                 <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">Пример баг-репорта</h2>
-                <span class="px-3 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] md:text-xs font-bold rounded-lg border border-red-100 dark:border-red-800/50 uppercase tracking-wider">
-                    Bug · Medium
-                </span>
+                <span class="px-3 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] md:text-xs font-bold rounded-lg border border-red-100 dark:border-red-800/50 uppercase tracking-wider">Bug · Medium</span>
             </div>
-
             <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
-                <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-                    Publish Now отображается для уже опубликованного элемента очереди
-                </h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
-                    В интерфейсе Publishing Queue кнопка Publish Now отображалась для контента со статусом Published. 
-                    Это могло запутать пользователя и привести к повторной попытке публикации.
-                </p>
-
+                <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Publish Now отображается для уже опубликованного элемента очереди</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">В интерфейсе Publishing Queue кнопка Publish Now отображалась для контента со статусом Published. Это могло запутать пользователя и привести к повторной попытке публикации.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <h4 class="font-bold text-slate-800 dark:text-slate-200 text-[10px] uppercase tracking-widest mb-2">Шаги</h4>
@@ -273,7 +254,6 @@
             </div>
         </section>
 
-        <!-- Tools + Contacts -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <section class="bento-card md:col-span-2 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
                 <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-4">Инструменты и технологии</h2>
@@ -299,7 +279,7 @@
                     <p><a class="text-blue-500 dark:text-blue-400 hover:underline" href="mailto:tola0708607@gmail.com">tola0708607@gmail.com</a></p>
                     <p><a class="text-blue-500 dark:text-blue-400 hover:underline" href="https://t.me/vqns7" target="_blank">Telegram</a></p>
                     <p><a class="text-blue-500 dark:text-blue-400 hover:underline" href="https://github.com/V1nSky" target="_blank">GitHub</a></p>
-                    <p><a class="text-blue-500 dark:text-blue-400 hover:underline" href="https://v1nsky.github.io/resume/" target="_blank">Developer resume</a></p>
+                    <p><a class="text-blue-500 dark:text-blue-400 hover:underline" href="https://v1nsky.github.io/resume-dev/" target="_blank">Developer resume</a></p>
                 </div>
             </section>
         </div>
