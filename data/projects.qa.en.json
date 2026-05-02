@@ -1,0 +1,104 @@
+[
+  {
+    "id": "global-dispatch",
+    "title": "GLOBAL Dispatch landing/admin",
+    "category": "QA case study",
+    "projectType": "Next.js landing + admin CMS",
+    "stack": "Next.js 14, TypeScript, Prisma, SQLite, Tailwind, Framer Motion",
+    "qaFocus": "forms, leads API, admin auth, content editing, upload, rate limit, password change",
+    "backendFocus": "API routes for leads/content/team/settings/upload, Prisma models Lead/Content/Settings/Admin",
+    "devopsFocus": "env config, build scripts, DB init, production landing workflow",
+    "telegramFocus": "Telegram notifications for new website requests by Telegram ID",
+    "artifacts": [
+      "Checklist",
+      "Test cases",
+      "Bug reports",
+      "Traceability matrix"
+    ]
+  },
+  {
+    "id": "driver-board",
+    "title": "Driver Board Java",
+    "category": "QA case study",
+    "projectType": "logistics TV board + admin + API + Telegram foundation",
+    "stack": "Java 21, Spring Boot 3, JPA, Flyway, H2/PostgreSQL, React/Tailwind frontend, TelegramBots",
+    "qaFocus": "driver statuses, queue sorting, time calculation, admin CRUD, CSV/XLSX import/export, TV readability",
+    "backendFocus": "REST API, service layer, database migrations, Telegram bot using shared DriverService",
+    "devopsFocus": "macOS no-Docker local run, Linux/VPS run, env profile, optional Docker, README/runbook",
+    "telegramFocus": "bot foundation for list/add/edit/status/hide/delete drivers",
+    "artifacts": [
+      "Checklist",
+      "Test cases",
+      "Bug reports",
+      "Traceability matrix"
+    ]
+  },
+  {
+    "id": "leadhunter",
+    "title": "LeadHunter v6",
+    "category": "QA case study",
+    "projectType": "Telegram lead generation SaaS + Mini App",
+    "stack": "FastAPI/Telegram stack, Telethon, aiogram, SQLite, WebApp, Vanilla JS/Vite, WebSocket plans",
+    "qaFocus": "multi-account flows, Telegram auth, limits, subscriptions, exports, source management, security gaps documented",
+    "backendFocus": "lead/source/niche/account/subscription modules, exports CSV/XLSX, AI scoring, live monitoring",
+    "devopsFocus": "release notes, miniapp docs, known devops gaps: Docker/CI/CD missing",
+    "telegramFocus": "Telegram bot + Mini App + Telethon parsing + WebApp SDK",
+    "artifacts": [
+      "Checklist",
+      "Test cases",
+      "Bug reports",
+      "Traceability matrix"
+    ]
+  },
+  {
+    "id": "stars-bot",
+    "title": "Telegram Stars Seller Bot v6",
+    "category": "QA case study",
+    "projectType": "Telegram Stars payment/fulfillment bot",
+    "stack": "Python, aiogram, SQLAlchemy async, YooKassa, CryptoBot, TON/Fragment services",
+    "qaFocus": "payment states, manual/auto confirmation, order fulfillment fallback, admin flows, rate/config validation",
+    "backendFocus": "async services for payments, stars, fragment, cryptobot, ton, notifications, runtime config",
+    "devopsFocus": "env based setup, DB URL config, webhook server present",
+    "telegramFocus": "core Telegram commerce bot with inline keyboards and admin handlers",
+    "artifacts": [
+      "Checklist",
+      "Test cases",
+      "Bug reports",
+      "Traceability matrix"
+    ]
+  },
+  {
+    "id": "manicure-bot",
+    "title": "Manicure Booking Bot",
+    "category": "QA case study",
+    "projectType": "Telegram booking bot for appointment scheduling",
+    "stack": "Python, aiogram 3, SQLite, APScheduler, FSM",
+    "qaFocus": "calendar slots, booking FSM, subscription check, reminders, review moderation, admin schedule/content flows",
+    "backendFocus": "SQLite operations, handlers/states/keyboards separation, scheduler tasks",
+    "devopsFocus": "systemd service example, local/macOS/Windows run docs",
+    "telegramFocus": "client booking, admin panel, reviews, reminders in Telegram",
+    "artifacts": [
+      "Checklist",
+      "Test cases",
+      "Bug reports",
+      "Traceability matrix"
+    ]
+  },
+  {
+    "id": "kwork-notifier",
+    "title": "Kwork Notifier Bot",
+    "category": "QA case study",
+    "projectType": "Kwork unread message monitor with Telegram alerts",
+    "stack": "Python, aiogram, BeautifulSoup/http client, Docker Compose, state.json",
+    "qaFocus": "polling interval, deduplication, relogin, session TTL, status commands, parser fallback logs",
+    "backendFocus": "parser/auth/inbox/client modules, dataclass message, state storage",
+    "devopsFocus": "Dockerfile, docker-compose, restart policy, local run",
+    "telegramFocus": "Telegram notifications with read callback and /status",
+    "artifacts": [
+      "Checklist",
+      "Test cases",
+      "Bug reports",
+      "Traceability matrix"
+    ]
+  }
+]

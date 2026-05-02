@@ -1,0 +1,13 @@
+ID,Project,Feature,Precondition,Steps,Expected result,Priority,Type
+TC-001,GLOBAL Dispatch landing/admin,Main user flow,Project is running locally,Open product → complete main scenario → verify result,"Data is saved/displayed correctly, no errors",High,Functional
+TC-011,GLOBAL Dispatch landing/admin,Negative validation,Form or API is available,Submit empty/invalid data,System shows error and does not save invalid data,High,Negative
+TC-002,Driver Board Java,Main user flow,Project is running locally,Open product → complete main scenario → verify result,"Data is saved/displayed correctly, no errors",High,Functional
+TC-012,Driver Board Java,Negative validation,Form or API is available,Submit empty/invalid data,System shows error and does not save invalid data,High,Negative
+TC-003,LeadHunter v6,Main user flow,Project is running locally,Open product → complete main scenario → verify result,"Data is saved/displayed correctly, no errors",High,Functional
+TC-013,LeadHunter v6,Negative validation,Form or API is available,Submit empty/invalid data,System shows error and does not save invalid data,High,Negative
+TC-004,Telegram Stars Seller Bot v6,Main user flow,Project is running locally,Open product → complete main scenario → verify result,"Data is saved/displayed correctly, no errors",High,Functional
+TC-014,Telegram Stars Seller Bot v6,Negative validation,Form or API is available,Submit empty/invalid data,System shows error and does not save invalid data,High,Negative
+TC-005,Manicure Booking Bot,Main user flow,Project is running locally,Open product → complete main scenario → verify result,"Data is saved/displayed correctly, no errors",High,Functional
+TC-015,Manicure Booking Bot,Negative validation,Form or API is available,Submit empty/invalid data,System shows error and does not save invalid data,High,Negative
+TC-006,Kwork Notifier Bot,Main user flow,Project is running locally,Open product → complete main scenario → verify result,"Data is saved/displayed correctly, no errors",High,Functional
+TC-016,Kwork Notifier Bot,Negative validation,Form or API is available,Submit empty/invalid data,System shows error and does not save invalid data,High,Negative

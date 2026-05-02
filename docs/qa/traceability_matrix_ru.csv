@@ -1,0 +1,7 @@
+Requirement,Project,Test artifact,Risk,Priority
+"forms, leads API, admin auth, content editing, upload, rate limit, password change",GLOBAL Dispatch landing/admin,Checklist + test cases + bug reports,Business logic/regression risk,High
+"driver statuses, queue sorting, time calculation, admin CRUD, CSV/XLSX import/export, TV readability",Driver Board Java,Checklist + test cases + bug reports,Business logic/regression risk,High
+"multi-account flows, Telegram auth, limits, subscriptions, exports, source management, security gaps documented",LeadHunter v6,Checklist + test cases + bug reports,Business logic/regression risk,High
+"payment states, manual/auto confirmation, order fulfillment fallback, admin flows, rate/config validation",Telegram Stars Seller Bot v6,Checklist + test cases + bug reports,Business logic/regression risk,High
+"calendar slots, booking FSM, subscription check, reminders, review moderation, admin schedule/content flows",Manicure Booking Bot,Checklist + test cases + bug reports,Business logic/regression risk,High
+"polling interval, deduplication, relogin, session TTL, status commands, parser fallback logs",Kwork Notifier Bot,Checklist + test cases + bug reports,Business logic/regression risk,High
