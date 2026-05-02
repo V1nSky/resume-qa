@@ -1,0 +1,10 @@
+node_modules/
+playwright-report/
+test-results/
+traces/
+videos/
+screenshots/
+.env
+.env.*
+.DS_Store
+npm-debug.log*

@@ -381,6 +381,41 @@
             </div>
         </section>
 
+        <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white"><span data-ru>QA Automation</span><span data-en>QA Automation</span></h2>
+                <span class="px-3 py-1 bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 text-[10px] md:text-xs font-bold rounded-lg border border-sky-100 dark:border-sky-800/50 uppercase tracking-wider">Basic smoke tests</span>
+            </div>
+            <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-5" data-ru>
+                Manual QA + базовые навыки автоматизации: небольшой Playwright smoke-pack проверяет главные страницы, RU/EN переключатель, видимость QA-разделов, artifact hub, мобильный viewport и структуру JSON-данных.
+            </p>
+            <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-5" data-en>
+                Manual QA + basic automation skills: a small Playwright smoke pack checks main pages, the RU/EN toggle, QA sections, artifact hub, mobile viewport, and JSON data structure.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">Playwright UI</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-ru>Smoke-тесты для `index.html`, `rem.html`, языка, основных CTA и мобильного отображения.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-en>Smoke tests for `index.html`, `rem.html`, language switching, main CTAs, and mobile layout.</p>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">Data checks</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-ru>Проверка `projects.qa.ru/en.json`: обязательные поля, artifacts и совместимость RU/EN структуры.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-en>Validation for `projects.qa.ru/en.json`: required fields, artifacts, and compatible RU/EN structure.</p>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">GitHub Actions</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-ru>CI workflow устанавливает зависимости, Chromium и запускает `npm run test`.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-en>CI workflow installs dependencies, Chromium, and runs `npm run test`.</p>
+                </div>
+            </div>
+            <div class="mt-5 flex flex-wrap gap-2">
+                <a href="tests/README.md" class="raw-link">Tests README (raw)</a>
+                <a href="tests/ui/resume.spec.js" class="raw-link">UI spec</a>
+                <a href="tests/data/projects.spec.js" class="raw-link">Data spec</a>
+            </div>
+        </section>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <section class="bento-card md:col-span-2 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
                 <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-4">Инструменты и технологии</h2>

@@ -1,0 +1,14 @@
+{
+  "name": "resume-qa-smoke-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small QA automation smoke test pack for the static resume-qa portfolio.",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test tests/ui",
+    "test:data": "playwright test tests/data"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}
