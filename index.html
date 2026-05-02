@@ -25,6 +25,8 @@
         html[data-lang="ru"] [data-en], html[data-lang="en"] [data-ru] { display: none; }
         .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         .artifact-link { display: inline-flex; align-items: center; gap: .35rem; border-radius: .75rem; padding: .55rem .75rem; font-size: .8rem; font-weight: 700; }
+        .raw-link { color: rgb(100 116 139); font-size: .75rem; text-decoration: underline; text-underline-offset: 3px; }
+        .dark .raw-link { color: rgb(148 163 184); }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 antialiased p-4 md:p-10 min-h-screen">
@@ -177,8 +179,9 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
                 <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white"><span data-ru>Featured QA projects</span><span data-en>Featured QA projects</span></h2>
                 <div class="flex flex-wrap gap-2">
-                    <a href="data/projects.qa.ru.json" class="artifact-link bg-violet-50 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border border-violet-100 dark:border-violet-800/50">RU JSON</a>
-                    <a href="data/projects.qa.en.json" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN JSON</a>
+                    <a href="rem.html#projects" class="artifact-link bg-violet-50 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border border-violet-100 dark:border-violet-800/50"><span data-ru>Смотреть проекты</span><span data-en>View projects</span></a>
+                    <a href="data/projects.qa.ru.json" class="raw-link">Raw JSON RU</a>
+                    <a href="data/projects.qa.en.json" class="raw-link">Raw JSON EN</a>
                 </div>
             </div>
 
@@ -233,8 +236,9 @@
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-ru>5 Jira-style примеров: severity, priority, environment, steps, actual/expected result.</p>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-en>5 Jira-style examples with severity, priority, environment, steps, actual and expected result.</p>
                     <div class="flex flex-wrap gap-2">
-                        <a href="docs/qa/bug_reports_ru.md" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">RU</a>
-                        <a href="docs/qa/bug_reports_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN</a>
+                        <a href="rem.html#bug-reports" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50"><span data-ru>Смотреть</span><span data-en>View</span></a>
+                        <a href="docs/qa/bug_reports_ru.md" class="raw-link">Raw MD RU</a>
+                        <a href="docs/qa/bug_reports_en.md" class="raw-link">Raw MD EN</a>
                     </div>
                 </div>
                 <div class="rounded-2xl p-5 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
@@ -242,8 +246,9 @@
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-ru>Чек-листы по 6 проектам: happy path, валидация, пустые состояния, double submit, права доступа, мобильный вид.</p>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-en>Checklists for 6 projects: happy path, validation, empty states, double submit, access rights, mobile view.</p>
                     <div class="flex flex-wrap gap-2">
-                        <a href="docs/qa/checklists_ru.md" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">RU</a>
-                        <a href="docs/qa/checklists_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN</a>
+                        <a href="rem.html#checklists" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50"><span data-ru>Смотреть</span><span data-en>View</span></a>
+                        <a href="docs/qa/checklists_ru.md" class="raw-link">Raw MD RU</a>
+                        <a href="docs/qa/checklists_en.md" class="raw-link">Raw MD EN</a>
                     </div>
                 </div>
                 <div class="rounded-2xl p-5 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
@@ -251,8 +256,9 @@
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-ru>CSV с функциональными и негативными тестами по каждому проекту.</p>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-en>CSV with functional and negative tests for each project.</p>
                     <div class="flex flex-wrap gap-2">
-                        <a href="docs/qa/test_cases_ru.csv" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">RU CSV</a>
-                        <a href="docs/qa/test_cases_en.csv" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN CSV</a>
+                        <a href="rem.html#test-cases" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50"><span data-ru>Смотреть таблицу</span><span data-en>View table</span></a>
+                        <a href="docs/qa/test_cases_ru.csv" class="raw-link">Download CSV RU</a>
+                        <a href="docs/qa/test_cases_en.csv" class="raw-link">Download CSV EN</a>
                     </div>
                 </div>
                 <div class="rounded-2xl p-5 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
@@ -260,15 +266,15 @@
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-ru>Связка требований, артефактов, рисков и приоритетов по всем проектам.</p>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-en>Requirements, artifacts, risks, and priorities mapped across projects.</p>
                     <div class="flex flex-wrap gap-2">
-                        <a href="docs/qa/traceability_matrix_ru.csv" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">RU CSV</a>
-                        <a href="docs/qa/traceability_matrix_en.csv" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN CSV</a>
+                        <a href="rem.html#traceability" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50"><span data-ru>Смотреть таблицу</span><span data-en>View table</span></a>
+                        <a href="docs/qa/traceability_matrix_ru.csv" class="raw-link">Download CSV RU</a>
+                        <a href="docs/qa/traceability_matrix_en.csv" class="raw-link">Download CSV EN</a>
                     </div>
                 </div>
             </div>
             <div class="mt-5 flex flex-wrap gap-2">
                 <a href="rem.html" class="artifact-link bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border border-amber-100 dark:border-amber-800/50"><span data-ru>Все артефакты</span><span data-en>All artifacts</span></a>
-                <a href="docs/qa/project_case_studies_ru.md" class="artifact-link bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50">Case studies RU</a>
-                <a href="docs/qa/project_case_studies_en.md" class="artifact-link bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50">Case studies EN</a>
+                <a href="rem.html#case-studies" class="artifact-link bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50"><span data-ru>Кейсы</span><span data-en>Case studies</span></a>
             </div>
         </section>
 
@@ -301,7 +307,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="docs/qa/bug_reports_ru.md" class="artifact-link mt-5 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-100 dark:border-red-800/50"><span data-ru>Открыть все баг-репорты</span><span data-en>Open all bug reports</span></a>
+                <a href="rem.html#bug-reports" class="artifact-link mt-5 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-100 dark:border-red-800/50"><span data-ru>Открыть все баг-репорты</span><span data-en>Open all bug reports</span></a>
             </div>
         </section>
 
@@ -349,33 +355,29 @@
                 <span class="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-[10px] md:text-xs font-bold rounded-lg border border-indigo-100 dark:border-indigo-800/50 uppercase tracking-wider">QA + tech background</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                <a href="docs/profiles/qa_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                <a href="rem.html#profiles" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
                     <h3 class="font-bold text-slate-900 dark:text-white mb-2">QA</h3>
                     <p class="text-xs text-slate-500 dark:text-slate-400">Bug reports, functional/API/regression testing, test documentation.</p>
                 </a>
-                <a href="docs/profiles/backend_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                <a href="rem.html#profiles" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
                     <h3 class="font-bold text-slate-900 dark:text-white mb-2">Junior Backend</h3>
                     <p class="text-xs text-slate-500 dark:text-slate-400">API routes, service layer, DB models, exports, async services.</p>
                 </a>
-                <a href="docs/profiles/devops_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                <a href="rem.html#profiles" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
                     <h3 class="font-bold text-slate-900 dark:text-white mb-2">DevOps</h3>
                     <p class="text-xs text-slate-500 dark:text-slate-400">Env config, runbooks, Docker/systemd examples, local/VPS run docs.</p>
                 </a>
-                <a href="docs/profiles/telegram_bots_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                <a href="rem.html#profiles" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
                     <h3 class="font-bold text-slate-900 dark:text-white mb-2">Telegram Bots</h3>
                     <p class="text-xs text-slate-500 dark:text-slate-400">Mini Apps, commerce bots, booking flows, alerts, admin handlers.</p>
                 </a>
-                <a href="docs/profiles/combined_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                <a href="rem.html#profiles" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
                     <h3 class="font-bold text-slate-900 dark:text-white mb-2">Combined</h3>
                     <p class="text-xs text-slate-500 dark:text-slate-400">QA-minded Junior Developer with backend, DevOps and Telegram automation.</p>
                 </a>
             </div>
             <div class="mt-5 flex flex-wrap gap-2">
-                <a href="docs/profiles/qa_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">QA EN</a>
-                <a href="docs/profiles/backend_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Backend EN</a>
-                <a href="docs/profiles/devops_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">DevOps EN</a>
-                <a href="docs/profiles/telegram_bots_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Telegram EN</a>
-                <a href="docs/profiles/combined_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Combined EN</a>
+                <a href="rem.html#profiles" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"><span data-ru>Открыть профили</span><span data-en>Open profiles</span></a>
             </div>
         </section>
 

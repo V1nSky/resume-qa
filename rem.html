@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,54 +8,239 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    html[data-lang="ru"] [data-en], html[data-lang="en"] [data-ru] { display: none; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .card { border: 1px solid rgba(51, 65, 85, .95); background: rgba(15, 23, 42, .92); }
+    .raw-link { color: #94a3b8; font-size: .75rem; text-decoration: underline; text-underline-offset: 3px; }
   </style>
 </head>
 <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
-  <main class="max-w-5xl mx-auto px-5 py-8 md:py-12 space-y-6">
-    <header class="rounded-[28px] border border-slate-800 bg-slate-900 p-6 md:p-8">
-      <p class="text-xs font-bold uppercase tracking-[0.3em] text-blue-300 mb-3">resume-qa / artifacts</p>
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">QA artifacts index</h1>
-      <p class="mt-4 max-w-3xl text-slate-300 leading-relaxed">
-        Отдельная страница со ссылками на RU/EN артефакты: баг-репорты, чек-листы, тест-кейсы, матрицу требований, кейсы и профильные блоки.
-      </p>
-      <a href="index.html" class="inline-flex mt-5 rounded-xl bg-white px-4 py-2 text-sm font-bold text-slate-950">На главную</a>
+  <main class="max-w-6xl mx-auto px-5 py-8 md:py-12 space-y-6">
+    <header class="card rounded-[28px] p-6 md:p-8">
+      <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.3em] text-blue-300 mb-3">resume-qa / artifacts</p>
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+            <span data-ru>QA-артефакты</span><span data-en>QA Artifacts</span>
+          </h1>
+          <p class="mt-4 max-w-3xl text-slate-300 leading-relaxed" data-ru>
+            Читаемая витрина портфолио: баг-репорты, чек-листы, тест-кейсы, traceability matrix, кейсы проектов и профильные блоки. Исходные Markdown/CSV доступны отдельно как raw/download ссылки.
+          </p>
+          <p class="mt-4 max-w-3xl text-slate-300 leading-relaxed" data-en>
+            A readable portfolio hub: bug reports, checklists, test cases, traceability matrix, project case studies, and profile blocks. Source Markdown/CSV files are available separately as raw/download links.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 md:justify-end">
+          <a href="index.html" class="rounded-xl bg-white px-4 py-2 text-sm font-bold text-slate-950"><span data-ru>На главную</span><span data-en>Home</span></a>
+          <button type="button" data-lang-button="ru" class="rounded-xl bg-blue-500 px-4 py-2 text-sm font-bold text-white">RU</button>
+          <button type="button" data-lang-button="en" class="rounded-xl bg-slate-800 px-4 py-2 text-sm font-bold text-slate-300">EN</button>
+        </div>
+      </div>
+      <nav class="mt-6 flex flex-wrap gap-2 text-sm">
+        <a class="rounded-xl bg-slate-800 px-3 py-2 text-slate-200 hover:bg-slate-700" href="#bug-reports">Bug reports</a>
+        <a class="rounded-xl bg-slate-800 px-3 py-2 text-slate-200 hover:bg-slate-700" href="#checklists">Checklists</a>
+        <a class="rounded-xl bg-slate-800 px-3 py-2 text-slate-200 hover:bg-slate-700" href="#test-cases">Test cases</a>
+        <a class="rounded-xl bg-slate-800 px-3 py-2 text-slate-200 hover:bg-slate-700" href="#traceability">Traceability</a>
+        <a class="rounded-xl bg-slate-800 px-3 py-2 text-slate-200 hover:bg-slate-700" href="#case-studies">Case studies</a>
+        <a class="rounded-xl bg-slate-800 px-3 py-2 text-slate-200 hover:bg-slate-700" href="#profiles">Profiles</a>
+      </nav>
     </header>
 
-    <section class="grid md:grid-cols-2 gap-4">
-      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-5">
-        <h2 class="text-xl font-bold text-white mb-4">QA docs</h2>
-        <div class="grid gap-2 text-sm">
-          <a class="text-blue-300 hover:underline" href="docs/qa/bug_reports_ru.md">Bug reports RU</a>
-          <a class="text-blue-300 hover:underline" href="docs/qa/bug_reports_en.md">Bug reports EN</a>
-          <a class="text-blue-300 hover:underline" href="docs/qa/checklists_ru.md">Checklists RU</a>
-          <a class="text-blue-300 hover:underline" href="docs/qa/checklists_en.md">Checklists EN</a>
-          <a class="text-blue-300 hover:underline" href="docs/qa/project_case_studies_ru.md">Case studies RU</a>
-          <a class="text-blue-300 hover:underline" href="docs/qa/project_case_studies_en.md">Case studies EN</a>
-          <a class="text-blue-300 hover:underline" href="docs/qa/test_cases_ru.csv">Test cases RU CSV</a>
-          <a class="text-blue-300 hover:underline" href="docs/qa/test_cases_en.csv">Test cases EN CSV</a>
-          <a class="text-blue-300 hover:underline" href="docs/qa/traceability_matrix_ru.csv">Traceability RU CSV</a>
-          <a class="text-blue-300 hover:underline" href="docs/qa/traceability_matrix_en.csv">Traceability EN CSV</a>
+    <section id="projects" class="card rounded-[28px] p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+        <h2 class="text-2xl font-bold text-white"><span data-ru>Проекты как QA-кейсы</span><span data-en>Projects as QA Case Studies</span></h2>
+        <div class="flex gap-3">
+          <a class="raw-link" href="data/projects.qa.ru.json">Raw JSON RU</a>
+          <a class="raw-link" href="data/projects.qa.en.json">Raw JSON EN</a>
         </div>
-      </article>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white">GLOBAL Dispatch landing/admin</h3>
+          <p class="text-sm text-slate-400 mt-2">Forms, leads API, admin auth, content editing, upload, rate limit, password change.</p>
+        </article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white">Driver Board Java</h3>
+          <p class="text-sm text-slate-400 mt-2">Driver statuses, queue sorting, time calculation, admin CRUD, import/export, TV readability.</p>
+        </article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white">LeadHunter v6</h3>
+          <p class="text-sm text-slate-400 mt-2">Multi-account flows, Telegram auth, limits, subscriptions, exports, source management.</p>
+        </article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white">Telegram Stars Seller Bot v6</h3>
+          <p class="text-sm text-slate-400 mt-2">Payment states, confirmations, fulfillment fallback, admin flows, rate/config validation.</p>
+        </article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white">Manicure Booking Bot</h3>
+          <p class="text-sm text-slate-400 mt-2">Calendar slots, booking FSM, subscription check, reminders, review moderation.</p>
+        </article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white">Kwork Notifier Bot</h3>
+          <p class="text-sm text-slate-400 mt-2">Polling interval, deduplication, relogin, session TTL, status commands, parser fallback logs.</p>
+        </article>
+      </div>
+    </section>
 
-      <article class="rounded-3xl border border-slate-800 bg-slate-900 p-5">
-        <h2 class="text-xl font-bold text-white mb-4">Profiles and data</h2>
-        <div class="grid gap-2 text-sm">
-          <a class="text-blue-300 hover:underline" href="data/projects.qa.ru.json">Projects RU JSON</a>
-          <a class="text-blue-300 hover:underline" href="data/projects.qa.en.json">Projects EN JSON</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/qa_ru.md">QA RU</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/qa_en.md">QA EN</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/backend_ru.md">Backend RU</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/backend_en.md">Backend EN</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/devops_ru.md">DevOps RU</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/devops_en.md">DevOps EN</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/telegram_bots_ru.md">Telegram Bots RU</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/telegram_bots_en.md">Telegram Bots EN</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/combined_ru.md">Combined RU</a>
-          <a class="text-blue-300 hover:underline" href="docs/profiles/combined_en.md">Combined EN</a>
+    <section id="bug-reports" class="card rounded-[28px] p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+        <h2 class="text-2xl font-bold text-white">Jira-style bug reports</h2>
+        <div class="flex gap-3">
+          <a class="raw-link" href="docs/qa/bug_reports_ru.md">Raw MD RU</a>
+          <a class="raw-link" href="docs/qa/bug_reports_en.md">Raw MD EN</a>
         </div>
-      </article>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <article class="rounded-2xl bg-slate-900 border border-red-900/70 p-5">
+          <p class="text-xs font-bold uppercase tracking-widest text-red-300">BUG-005 · Critical · High</p>
+          <h3 class="mt-2 font-bold text-white" data-ru>LeadHunter Mini App: действия доступны без корректной Telegram WebApp validation</h3>
+          <h3 class="mt-2 font-bold text-white" data-en>LeadHunter Mini App: actions are available without valid Telegram WebApp validation</h3>
+          <p class="mt-3 text-sm text-slate-300" data-ru>Запрос без валидного Telegram initData должен отклоняться с 401/403.</p>
+          <p class="mt-3 text-sm text-slate-300" data-en>A request without valid Telegram initData must be rejected with 401/403.</p>
+        </article>
+        <article class="rounded-2xl bg-slate-900 border border-orange-900/70 p-5">
+          <p class="text-xs font-bold uppercase tracking-widest text-orange-300">BUG-004 · Critical · High</p>
+          <h3 class="mt-2 font-bold text-white" data-ru>Manicure Bot: слот остаётся доступным после бронирования</h3>
+          <h3 class="mt-2 font-bold text-white" data-en>Manicure Bot: slot remains available after booking</h3>
+          <p class="mt-3 text-sm text-slate-300" data-ru>После подтверждения записи слот должен исчезать из доступных, backend проверяет занятость перед сохранением.</p>
+          <p class="mt-3 text-sm text-slate-300" data-en>After booking confirmation, the slot should disappear and backend must check availability before saving.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="checklists" class="card rounded-[28px] p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+        <h2 class="text-2xl font-bold text-white">Checklists</h2>
+        <div class="flex gap-3">
+          <a class="raw-link" href="docs/qa/checklists_ru.md">Raw MD RU</a>
+          <a class="raw-link" href="docs/qa/checklists_en.md">Raw MD EN</a>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4 text-sm text-slate-300">
+        <div class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white mb-3">GLOBAL Dispatch</h3>
+          <ul class="space-y-2"><li>Forms and required fields</li><li>Lead API validation</li><li>Admin auth and protected actions</li><li>Mobile view and regression</li></ul>
+        </div>
+        <div class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white mb-3">Driver Board Java</h3>
+          <ul class="space-y-2"><li>Driver statuses</li><li>Queue sorting and time calculation</li><li>Admin CRUD</li><li>CSV/XLSX import/export</li></ul>
+        </div>
+        <div class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white mb-3">Telegram bots</h3>
+          <ul class="space-y-2"><li>FSM happy path</li><li>Double submit/repeated action</li><li>Subscription/payment states</li><li>Notifications and reminders</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="test-cases" class="card rounded-[28px] p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+        <h2 class="text-2xl font-bold text-white"><span data-ru>Тест-кейсы</span><span data-en>Test Cases</span></h2>
+        <div class="flex gap-3">
+          <a class="raw-link" href="docs/qa/test_cases_ru.csv">Download CSV RU</a>
+          <a class="raw-link" href="docs/qa/test_cases_en.csv">Download CSV EN</a>
+        </div>
+      </div>
+      <div class="table-scroll rounded-2xl border border-slate-700">
+        <table class="min-w-[820px] w-full text-left text-sm">
+          <thead class="bg-slate-800 text-slate-100">
+            <tr><th class="p-3">ID</th><th class="p-3">Project</th><th class="p-3">Feature</th><th class="p-3">Precondition</th><th class="p-3">Expected result</th><th class="p-3">Type</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800 text-slate-300">
+            <tr><td class="p-3 font-bold">TC-001</td><td class="p-3">GLOBAL Dispatch</td><td class="p-3">Основной пользовательский сценарий</td><td class="p-3">Проект запущен локально</td><td class="p-3">Данные сохраняются/отображаются корректно</td><td class="p-3">Functional</td></tr>
+            <tr><td class="p-3 font-bold">TC-012</td><td class="p-3">Driver Board Java</td><td class="p-3">Негативная валидация</td><td class="p-3">Форма или API доступны</td><td class="p-3">Ошибка показана, некорректные данные не сохранены</td><td class="p-3">Negative</td></tr>
+            <tr><td class="p-3 font-bold">TC-016</td><td class="p-3">Kwork Notifier Bot</td><td class="p-3">Негативная валидация</td><td class="p-3">Форма или API доступны</td><td class="p-3">Ошибка показана, некорректные данные не сохранены</td><td class="p-3">Negative</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="traceability" class="card rounded-[28px] p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+        <h2 class="text-2xl font-bold text-white">Traceability matrix</h2>
+        <div class="flex gap-3">
+          <a class="raw-link" href="docs/qa/traceability_matrix_ru.csv">Download CSV RU</a>
+          <a class="raw-link" href="docs/qa/traceability_matrix_en.csv">Download CSV EN</a>
+        </div>
+      </div>
+      <div class="table-scroll rounded-2xl border border-slate-700">
+        <table class="min-w-[820px] w-full text-left text-sm">
+          <thead class="bg-slate-800 text-slate-100">
+            <tr><th class="p-3">Project</th><th class="p-3">Requirement</th><th class="p-3">Test artifact</th><th class="p-3">Risk</th><th class="p-3">Priority</th></tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800 text-slate-300">
+            <tr><td class="p-3 font-bold">GLOBAL Dispatch</td><td class="p-3">forms, leads API, admin auth, content editing, upload, rate limit</td><td class="p-3">Checklist + test cases + bug reports</td><td class="p-3">Business logic/regression risk</td><td class="p-3">High</td></tr>
+            <tr><td class="p-3 font-bold">LeadHunter v6</td><td class="p-3">multi-account flows, Telegram auth, limits, subscriptions, exports</td><td class="p-3">Checklist + test cases + bug reports</td><td class="p-3">Business logic/regression risk</td><td class="p-3">High</td></tr>
+            <tr><td class="p-3 font-bold">Manicure Booking Bot</td><td class="p-3">calendar slots, booking FSM, subscription check, reminders</td><td class="p-3">Checklist + test cases + bug reports</td><td class="p-3">Business logic/regression risk</td><td class="p-3">High</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="case-studies" class="card rounded-[28px] p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+        <h2 class="text-2xl font-bold text-white"><span data-ru>Компактные кейсы</span><span data-en>Compact Case Studies</span></h2>
+        <div class="flex gap-3">
+          <a class="raw-link" href="docs/qa/project_case_studies_ru.md">Raw MD RU</a>
+          <a class="raw-link" href="docs/qa/project_case_studies_en.md">Raw MD EN</a>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white">GLOBAL Dispatch landing/admin</h3>
+          <p class="mt-2 text-sm text-slate-300">QA value: real user flows, business logic, negative cases, data validation, and integrations.</p>
+        </article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5">
+          <h3 class="font-bold text-white">Driver Board Java</h3>
+          <p class="mt-2 text-sm text-slate-300">QA value: B2B workflow with statuses, admin CRUD, queue sorting, import/export, and readability risks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="profiles" class="card rounded-[28px] p-6 md:p-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+        <h2 class="text-2xl font-bold text-white"><span data-ru>Профильные блоки</span><span data-en>Profile Blocks</span></h2>
+        <div class="flex flex-wrap gap-3">
+          <a class="raw-link" href="docs/profiles/qa_ru.md">Raw QA RU</a>
+          <a class="raw-link" href="docs/profiles/qa_en.md">Raw QA EN</a>
+          <a class="raw-link" href="docs/profiles/combined_ru.md">Raw Combined RU</a>
+          <a class="raw-link" href="docs/profiles/combined_en.md">Raw Combined EN</a>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-5 gap-4">
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5"><h3 class="font-bold text-white">QA</h3><p class="mt-2 text-xs text-slate-400">Functional, API, regression, bug reports, checklists, test cases.</p></article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5"><h3 class="font-bold text-white">Junior Backend</h3><p class="mt-2 text-xs text-slate-400">REST APIs, service layer, database models, exports, async services.</p></article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5"><h3 class="font-bold text-white">DevOps</h3><p class="mt-2 text-xs text-slate-400">Env config, runbooks, local/VPS run docs, Docker/systemd examples.</p></article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5"><h3 class="font-bold text-white">Telegram Bots</h3><p class="mt-2 text-xs text-slate-400">Mini Apps, commerce flows, booking, notifications, admin handlers.</p></article>
+        <article class="rounded-2xl bg-slate-900 border border-slate-700 p-5"><h3 class="font-bold text-white">Combined</h3><p class="mt-2 text-xs text-slate-400">QA-minded Junior Developer with backend, DevOps and Telegram automation.</p></article>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a class="raw-link" href="docs/profiles/backend_ru.md">Raw Backend RU</a>
+        <a class="raw-link" href="docs/profiles/backend_en.md">Raw Backend EN</a>
+        <a class="raw-link" href="docs/profiles/devops_ru.md">Raw DevOps RU</a>
+        <a class="raw-link" href="docs/profiles/devops_en.md">Raw DevOps EN</a>
+        <a class="raw-link" href="docs/profiles/telegram_bots_ru.md">Raw Telegram RU</a>
+        <a class="raw-link" href="docs/profiles/telegram_bots_en.md">Raw Telegram EN</a>
+      </div>
     </section>
   </main>
+
+  <script>
+    const html = document.documentElement;
+    const buttons = document.querySelectorAll('[data-lang-button]');
+    const setLanguage = (lang) => {
+      html.dataset.lang = lang;
+      html.lang = lang;
+      localStorage.resumeQaLang = lang;
+      buttons.forEach((button) => {
+        const active = button.dataset.langButton === lang;
+        button.classList.toggle('bg-blue-500', active);
+        button.classList.toggle('text-white', active);
+        button.classList.toggle('bg-slate-800', !active);
+        button.classList.toggle('text-slate-300', !active);
+      });
+    };
+    buttons.forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.langButton)));
+    setLanguage(localStorage.resumeQaLang || 'ru');
+  </script>
 </body>
 </html>
