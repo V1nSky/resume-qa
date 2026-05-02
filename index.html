@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Анатолий | Junior QA Engineer</title>
     <link rel="icon" href="./favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" href="./favicon.png">
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,6 +22,9 @@
         .bento-card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease, border-color 0.3s ease; }
         .bento-card:hover { transform: translateY(-2px); }
         .soft-grid { background-image: radial-gradient(circle at 1px 1px, rgba(59,130,246,.18) 1px, transparent 0); background-size: 24px 24px; }
+        html[data-lang="ru"] [data-en], html[data-lang="en"] [data-ru] { display: none; }
+        .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .artifact-link { display: inline-flex; align-items: center; gap: .35rem; border-radius: .75rem; padding: .55rem .75rem; font-size: .8rem; font-weight: 700; }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 antialiased p-4 md:p-10 min-h-screen">
@@ -34,6 +35,10 @@
             <svg id="sunIcon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
             <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
         </button>
+        <div class="absolute top-0 right-12 md:-mt-4 z-10 flex rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden" aria-label="Language">
+            <button type="button" data-lang-button="ru" class="px-3 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-700">RU</button>
+            <button type="button" data-lang-button="en" class="px-3 py-2 text-xs font-bold text-slate-500 dark:text-slate-400">EN</button>
+        </div>
 
         <header class="bento-card soft-grid bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.75rem] p-6 md:p-8 shadow-sm hover:shadow-md overflow-hidden">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -44,21 +49,24 @@
                     <div>
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-[11px] font-bold uppercase tracking-wider mb-3 border border-blue-100 dark:border-blue-800/60">
                             <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                            Open to Junior QA roles
+                            <span data-ru>Открыт к Junior QA ролям</span><span data-en>Open to Junior QA roles</span>
                         </div>
                         <h1 class="text-2xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Кобелев Анатолий</h1>
                         <p class="text-base md:text-xl text-slate-600 dark:text-slate-300 font-semibold mt-1">Junior QA Engineer</p>
-                        <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-2 max-w-2xl">
+                        <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-2 max-w-2xl" data-ru>
                             Manual QA · API testing · Bug reports · Checklists · Python automation basics · Developer background
+                        </p>
+                        <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-2 max-w-2xl" data-en>
+                            Junior QA with developer background: UI/API checks, Jira-style bug reports, checklists, test cases, regression.
                         </p>
                     </div>
                 </div>
                 <div class="flex flex-row md:flex-col gap-2 w-full md:w-auto">
                     <a href="https://t.me/vqns7" target="_blank" class="flex-1 text-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-2.5 rounded-xl text-sm font-semibold hover:opacity-90 transition">
-                        Написать мне
+                        <span data-ru>Написать мне</span><span data-en>Contact me</span>
                     </a>
                     <a href="https://v1nsky.github.io/resume-dev/" target="_blank" class="flex-1 text-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-                        Developer background
+                        <span data-ru>Developer background</span><span data-en>Developer background</span>
                     </a>
                 </div>
             </div>
@@ -66,12 +74,18 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <section class="bento-card md:col-span-2 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
-                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-4">Обо мне как QA</h2>
-                <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-4"><span data-ru>Обо мне как QA</span><span data-en>QA Summary</span></h2>
+                <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4" data-ru>
                     Я Junior QA Engineer с техническим бэкграундом в разработке веб-сервисов, Telegram-ботов и backend-автоматизаций. Понимаю, как продукт устроен со стороны пользователя, интерфейса, API, базы данных и бизнес-логики.
                 </p>
-                <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed" data-ru>
                     Мой плюс как QA — я могу не только вручную пройти сценарий, но и глубже разобрать причину дефекта через DevTools, API-ответы, статусы, логику backend и базовые SQL-проверки. Цель — развиваться в Manual QA с уклоном в API и постепенно усиливать автоматизацию на Python.
+                </p>
+                <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4" data-en>
+                    I test products both as a user and as a developer: UI/UX flows, APIs, statuses, queues, forms, authentication, negative scenarios, and business logic.
+                </p>
+                <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed" data-en>
+                    My developer background helps me investigate defects through DevTools, API responses, backend behavior, and basic SQL checks. I focus on Manual QA with API testing and gradual Python automation growth.
                 </p>
             </section>
 
@@ -93,6 +107,35 @@
                 </div>
             </section>
         </div>
+
+        <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white"><span data-ru>QA & Product Thinking</span><span data-en>QA & Product Thinking</span></h2>
+                <span class="px-3 py-1 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 text-[10px] md:text-xs font-bold rounded-lg border border-cyan-100 dark:border-cyan-800/50 uppercase tracking-wider">Risk-based QA</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">User flow</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-ru>Проверяю путь пользователя, пустые состояния, ошибки, повторные действия и мобильный вид.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-en>I verify user paths, empty states, errors, repeated actions, and mobile views.</p>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">Business logic</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-ru>Ищу риски в статусах, очередях, бронированиях, оплатах, дедупликации и экспорте.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-en>I look for risks in statuses, queues, bookings, payments, deduplication, and exports.</p>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">API / Backend</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-ru>Проверяю валидацию, auth, статусы ответов, rate limits и защиту действий на backend.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-en>I check validation, auth, response statuses, rate limits, and backend action guards.</p>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-widest mb-3">Documentation</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-ru>Оформляю баги, чек-листы, тест-кейсы и матрицу требований компактно для команды.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400" data-en>I prepare bug reports, checklists, test cases, and a traceability matrix in team-friendly form.</p>
+                </div>
+            </div>
+        </section>
 
         <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
@@ -132,128 +175,207 @@
 
         <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
-                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">QA-кейсы на проектах</h2>
-                <span class="px-3 py-1 bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-[10px] md:text-xs font-bold rounded-lg border border-violet-100 dark:border-violet-800/50 uppercase tracking-wider">Portfolio</span>
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white"><span data-ru>Featured QA projects</span><span data-en>Featured QA projects</span></h2>
+                <div class="flex flex-wrap gap-2">
+                    <a href="data/projects.qa.ru.json" class="artifact-link bg-violet-50 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border border-violet-100 dark:border-violet-800/50">RU JSON</a>
+                    <a href="data/projects.qa.en.json" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN JSON</a>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <article class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center gap-2.5"><span class="text-xl">♈</span><span class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">ZodiacOps</span></div>
-                        <span class="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold rounded-md border border-blue-100 dark:border-blue-800/50 uppercase tracking-wider">QA Case</span>
-                    </div>
-                    <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">AI-система для генерации, проверки, ревью, планирования и публикации Telegram-контента.</p>
-                    <div class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                        <p><strong class="text-slate-800 dark:text-slate-200">Задача:</strong> проверить, что контент не публикуется случайно и проходит правильные статусы.</p>
-                        <p><strong class="text-slate-800 dark:text-slate-200">Проверял:</strong> draft / needs_review / approved / scheduled / published, Publishing Queue, Publish Now, retry, ручной review workflow.</p>
-                        <p><strong class="text-slate-800 dark:text-slate-200">Риск:</strong> повторная публикация, неправильные кнопки, публикация неподтверждённого контента.</p>
-                        <p><strong class="text-slate-800 dark:text-slate-200">Результат:</strong> оформлены баги и требования к publishing gates.</p>
-                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">GLOBAL Dispatch landing/admin</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Next.js landing + admin CMS</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong class="text-slate-800 dark:text-slate-200">QA focus:</strong> forms, leads API, admin auth, content editing, upload, rate limit, password change.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2"><strong class="text-slate-800 dark:text-slate-200">Artifacts:</strong> checklist, test cases, bug reports, traceability matrix.</p>
                 </article>
-
                 <article class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center gap-2.5"><span class="text-xl">🔍</span><span class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">LeadHunter</span></div>
-                        <span class="px-2 py-0.5 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold rounded-md border border-green-100 dark:border-green-800/50 uppercase tracking-wider">SaaS</span>
-                    </div>
-                    <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">Pet-проект для поиска и обработки лидов из Telegram с аккаунтами, нишами, экспортом и антибан-логикой.</p>
-                    <div class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                        <p><strong class="text-slate-800 dark:text-slate-200">Задача:</strong> проверить ключевые сценарии Mini App и backend-логики.</p>
-                        <p><strong class="text-slate-800 dark:text-slate-200">Проверял:</strong> аккаунты, источники, лиды, экспорт CSV/XLSX, ошибки Telegram API, изоляцию данных.</p>
-                        <p><strong class="text-slate-800 dark:text-slate-200">Риск:</strong> потеря данных, неверный экспорт, смешивание пользовательских данных.</p>
-                        <p><strong class="text-slate-800 dark:text-slate-200">Результат:</strong> собраны сценарии для ручного тестирования и будущей регрессии.</p>
-                    </div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">Driver Board Java</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Logistics TV board + admin + API + Telegram foundation</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong class="text-slate-800 dark:text-slate-200">QA focus:</strong> driver statuses, queue sorting, time calculation, admin CRUD, CSV/XLSX import/export, TV readability.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2"><strong class="text-slate-800 dark:text-slate-200">Risk:</strong> incorrect queue order, wrong status transitions, import/export regression.</p>
                 </article>
-
-                <article class="bento-card md:col-span-2 bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
-                    <div class="flex items-start justify-between gap-3 mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">🚛</span>
-                            <div>
-                                <a href="https://mrmaxdispatch.com" target="_blank" class="font-semibold text-slate-900 dark:text-white text-sm md:text-base hover:text-violet-500 dark:hover:text-violet-400 transition-colors">GLOBAL Dispatch <span class="text-[10px] text-slate-400 dark:text-slate-500 font-normal">↗</span></a>
-                                <span class="text-xs text-slate-500 dark:text-slate-400 block mt-0.5">Коммерческий проект · корпоративный сайт + админ-панель</span>
-                            </div>
-                        </div>
-                        <span class="px-2 py-0.5 bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-[10px] font-bold rounded-md border border-orange-100 dark:border-orange-800/50 uppercase tracking-wider shrink-0">Client</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <h3 class="font-bold text-slate-800 dark:text-slate-200 text-[10px] uppercase tracking-widest mb-2">Что проверял в проекте</h3>
-                            <ul class="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
-                                <li>✓ формы заявок и отправку данных</li>
-                                <li>✓ мультиязычность EN / RU / UZ</li>
-                                <li>✓ адаптивность на мобильных устройствах</li>
-                                <li>✓ SEO-поля, тексты, изображения и контакты из админки</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-800 dark:text-slate-200 text-[10px] uppercase tracking-widest mb-2">Админка и backend</h3>
-                            <ul class="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
-                                <li>✓ роли администратора и доступ к панели</li>
-                                <li>✓ загрузка фото и редактирование контента</li>
-                                <li>✓ управление цветами, блоками и лидами</li>
-                                <li>✓ базовые security-проверки: XSS, auth, rate limits</li>
-                            </ul>
-                        </div>
-                    </div>
+                <article class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">LeadHunter v6</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Telegram lead generation SaaS + Mini App</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong class="text-slate-800 dark:text-slate-200">QA focus:</strong> multi-account flows, Telegram auth, limits, subscriptions, exports, source management, security gaps documented.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2"><strong class="text-slate-800 dark:text-slate-200">Risk:</strong> auth bypass, data isolation issues, incorrect exports.</p>
+                </article>
+                <article class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">Telegram Stars Seller Bot v6</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Telegram Stars payment/fulfillment bot</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong class="text-slate-800 dark:text-slate-200">QA focus:</strong> payment states, manual/auto confirmation, order fulfillment fallback, admin flows, rate/config validation.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2"><strong class="text-slate-800 dark:text-slate-200">Risk:</strong> wrong payment state, duplicate fulfillment, broken fallback.</p>
+                </article>
+                <article class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">Manicure Booking Bot</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Telegram booking bot for appointment scheduling</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong class="text-slate-800 dark:text-slate-200">QA focus:</strong> calendar slots, booking FSM, subscription check, reminders, review moderation, admin schedule/content flows.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2"><strong class="text-slate-800 dark:text-slate-200">Risk:</strong> double booking, wrong reminder, invalid schedule state.</p>
+                </article>
+                <article class="bento-card bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
+                    <h3 class="font-semibold text-slate-900 dark:text-white text-sm md:text-base">Kwork Notifier Bot</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Kwork unread message monitor with Telegram alerts</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-4"><strong class="text-slate-800 dark:text-slate-200">QA focus:</strong> polling interval, deduplication, relogin, session TTL, status commands, parser fallback logs.</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2"><strong class="text-slate-800 dark:text-slate-200">Risk:</strong> missed notification, duplicate alert, stale session.</p>
                 </article>
             </div>
         </section>
 
         <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
-                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">QA-артефакты</h2>
-                <span class="px-3 py-1 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-[10px] md:text-xs font-bold rounded-lg border border-amber-100 dark:border-amber-800/50 uppercase tracking-wider">In progress</span>
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white"><span data-ru>QA-артефакты</span><span data-en>QA Artifacts</span></h2>
+                <span class="px-3 py-1 bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-[10px] md:text-xs font-bold rounded-lg border border-amber-100 dark:border-amber-800/50 uppercase tracking-wider">Jira-style docs</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="rounded-2xl p-5 border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Checklist: GLOBAL Dispatch</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Заглушка. Скоро здесь будет чек-лист по формам, адаптиву, мультиязычности, админке и SEO-полям.</p>
+                <div class="rounded-2xl p-5 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2"><span data-ru>Bug reports</span><span data-en>Bug reports</span></h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-ru>5 Jira-style примеров: severity, priority, environment, steps, actual/expected result.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-en>5 Jira-style examples with severity, priority, environment, steps, actual and expected result.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="docs/qa/bug_reports_ru.md" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">RU</a>
+                        <a href="docs/qa/bug_reports_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN</a>
+                    </div>
                 </div>
-                <div class="rounded-2xl p-5 border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Test cases: форма заявки</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Заглушка. Будут позитивные, негативные и boundary-сценарии для заявки клиента.</p>
+                <div class="rounded-2xl p-5 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2"><span data-ru>Checklists</span><span data-en>Checklists</span></h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-ru>Чек-листы по 6 проектам: happy path, валидация, пустые состояния, double submit, права доступа, мобильный вид.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-en>Checklists for 6 projects: happy path, validation, empty states, double submit, access rights, mobile view.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="docs/qa/checklists_ru.md" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">RU</a>
+                        <a href="docs/qa/checklists_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN</a>
+                    </div>
                 </div>
-                <div class="rounded-2xl p-5 border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Postman / API checks</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Заглушка. Будет пример коллекции или список endpoint-проверок: статусы, JSON, валидация, ошибки.</p>
+                <div class="rounded-2xl p-5 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2"><span data-ru>Test cases table</span><span data-en>Test cases table</span></h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-ru>CSV с функциональными и негативными тестами по каждому проекту.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-en>CSV with functional and negative tests for each project.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="docs/qa/test_cases_ru.csv" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">RU CSV</a>
+                        <a href="docs/qa/test_cases_en.csv" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN CSV</a>
+                    </div>
                 </div>
-                <div class="rounded-2xl p-5 border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
-                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Regression: Publishing Queue</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Заглушка. Будет регрессионный список для статусов, Publish Now, retry, double-publish prevention.</p>
+                <div class="rounded-2xl p-5 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30">
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-2"><span data-ru>Traceability matrix</span><span data-en>Traceability matrix</span></h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-ru>Связка требований, артефактов, рисков и приоритетов по всем проектам.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4" data-en>Requirements, artifacts, risks, and priorities mapped across projects.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="docs/qa/traceability_matrix_ru.csv" class="artifact-link bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">RU CSV</a>
+                        <a href="docs/qa/traceability_matrix_en.csv" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">EN CSV</a>
+                    </div>
                 </div>
+            </div>
+            <div class="mt-5 flex flex-wrap gap-2">
+                <a href="rem.html" class="artifact-link bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border border-amber-100 dark:border-amber-800/50"><span data-ru>Все артефакты</span><span data-en>All artifacts</span></a>
+                <a href="docs/qa/project_case_studies_ru.md" class="artifact-link bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50">Case studies RU</a>
+                <a href="docs/qa/project_case_studies_en.md" class="artifact-link bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50">Case studies EN</a>
             </div>
         </section>
 
         <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
-                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">Пример баг-репорта</h2>
-                <span class="px-3 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] md:text-xs font-bold rounded-lg border border-red-100 dark:border-red-800/50 uppercase tracking-wider">Bug · Medium</span>
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white"><span data-ru>Пример баг-репорта</span><span data-en>Bug Report Preview</span></h2>
+                <span class="px-3 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] md:text-xs font-bold rounded-lg border border-red-100 dark:border-red-800/50 uppercase tracking-wider">BUG-005 · Critical</span>
             </div>
             <div class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5">
-                <h3 class="font-semibold text-slate-900 dark:text-white mb-2">Publish Now отображается для уже опубликованного элемента очереди</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">В интерфейсе Publishing Queue кнопка Publish Now отображалась для контента со статусом Published. Это могло запутать пользователя и привести к повторной попытке публикации.</p>
+                <h3 class="font-semibold text-slate-900 dark:text-white mb-2"><span data-ru>LeadHunter Mini App: действия доступны без корректной Telegram WebApp validation</span><span data-en>LeadHunter Mini App: actions are available without valid Telegram WebApp validation</span></h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4" data-ru>Критичный пример из набора артефактов: защищенный endpoint должен отклонять запросы без валидного Telegram initData.</p>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4" data-en>Critical example from the artifact set: a protected endpoint must reject requests without valid Telegram initData.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <h4 class="font-bold text-slate-800 dark:text-slate-200 text-[10px] uppercase tracking-widest mb-2">Шаги</h4>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-200 text-[10px] uppercase tracking-widest mb-2"><span data-ru>Шаги</span><span data-en>Steps</span></h4>
                         <ol class="space-y-1.5 text-sm text-slate-600 dark:text-slate-400 list-decimal list-inside">
-                            <li>Открыть ZodiacOps</li>
-                            <li>Перейти в Publishing Queue</li>
-                            <li>Найти элемент со статусом Published</li>
-                            <li>Проверить доступные действия</li>
+                            <li><span data-ru>Открыть Mini App API вне Telegram-клиента.</span><span data-en>Open the Mini App API outside the Telegram client.</span></li>
+                            <li><span data-ru>Отправить запрос к защищенному endpoint без валидного initData.</span><span data-en>Send a request to a protected endpoint without valid initData.</span></li>
+                            <li><span data-ru>Проверить ответ API.</span><span data-en>Check the API response.</span></li>
                         </ol>
                     </div>
                     <div>
-                        <h4 class="font-bold text-slate-800 dark:text-slate-200 text-[10px] uppercase tracking-widest mb-2">Результат</h4>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-200 text-[10px] uppercase tracking-widest mb-2"><span data-ru>Результат</span><span data-en>Result</span></h4>
                         <ul class="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
-                            <li><strong>Факт:</strong> кнопка Publish Now отображается.</li>
-                            <li><strong>Ожидание:</strong> для Published элемента кнопки быть не должно.</li>
+                            <li><strong>Actual:</strong> API can return data or perform the action.</li>
+                            <li><strong>Expected:</strong> request without valid Telegram initData is rejected with 401/403.</li>
+                            <li><strong>Severity:</strong> Critical</li>
                             <li><strong>Priority:</strong> High</li>
-                            <li><strong>Environment:</strong> macOS, Chrome, React/Vite, FastAPI</li>
+                            <li><strong>Project:</strong> LeadHunter v6</li>
                         </ul>
                     </div>
                 </div>
+                <a href="docs/qa/bug_reports_ru.md" class="artifact-link mt-5 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-100 dark:border-red-800/50"><span data-ru>Открыть все баг-репорты</span><span data-en>Open all bug reports</span></a>
+            </div>
+        </section>
+
+        <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white"><span data-ru>Test cases и traceability preview</span><span data-en>Test Cases and Traceability Preview</span></h2>
+                <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[10px] md:text-xs font-bold rounded-lg border border-slate-200 dark:border-slate-700 uppercase tracking-wider">CSV preview</span>
+            </div>
+            <div class="grid grid-cols-1 gap-5">
+                <div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-3"><span data-ru>Тест-кейсы</span><span data-en>Test cases</span></h3>
+                    <div class="table-scroll rounded-2xl border border-slate-200 dark:border-slate-700">
+                        <table class="min-w-[760px] w-full text-left text-xs md:text-sm">
+                            <thead class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                                <tr><th class="p-3">ID</th><th class="p-3">Project</th><th class="p-3">Feature</th><th class="p-3">Expected result</th><th class="p-3">Priority</th><th class="p-3">Type</th></tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-400">
+                                <tr><td class="p-3 font-semibold">TC-001</td><td class="p-3">GLOBAL Dispatch</td><td class="p-3">Основной пользовательский сценарий</td><td class="p-3">Данные сохраняются/отображаются корректно, ошибок нет</td><td class="p-3">High</td><td class="p-3">Functional</td></tr>
+                                <tr><td class="p-3 font-semibold">TC-012</td><td class="p-3">Driver Board Java</td><td class="p-3">Негативная валидация</td><td class="p-3">Система показывает ошибку и не сохраняет некорректные данные</td><td class="p-3">High</td><td class="p-3">Negative</td></tr>
+                                <tr><td class="p-3 font-semibold">TC-015</td><td class="p-3">Manicure Booking Bot</td><td class="p-3">Негативная валидация</td><td class="p-3">Система показывает ошибку и не сохраняет некорректные данные</td><td class="p-3">High</td><td class="p-3">Negative</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-slate-900 dark:text-white mb-3"><span data-ru>Матрица требований</span><span data-en>Traceability matrix</span></h3>
+                    <div class="table-scroll rounded-2xl border border-slate-200 dark:border-slate-700">
+                        <table class="min-w-[760px] w-full text-left text-xs md:text-sm">
+                            <thead class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                                <tr><th class="p-3">Project</th><th class="p-3">Requirement</th><th class="p-3">Artifact</th><th class="p-3">Risk</th><th class="p-3">Priority</th></tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-slate-600 dark:text-slate-400">
+                                <tr><td class="p-3 font-semibold">LeadHunter v6</td><td class="p-3">multi-account flows, Telegram auth, limits, subscriptions, exports</td><td class="p-3">Checklist + test cases + bug reports</td><td class="p-3">Business logic/regression risk</td><td class="p-3">High</td></tr>
+                                <tr><td class="p-3 font-semibold">Telegram Stars Seller Bot v6</td><td class="p-3">payment states, confirmation, fulfillment fallback, admin flows</td><td class="p-3">Checklist + test cases + bug reports</td><td class="p-3">Business logic/regression risk</td><td class="p-3">High</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bento-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-3">
+                <h2 class="text-lg md:text-xl font-semibold text-slate-900 dark:text-white"><span data-ru>Профильные блоки</span><span data-en>Profile Blocks</span></h2>
+                <span class="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-[10px] md:text-xs font-bold rounded-lg border border-indigo-100 dark:border-indigo-800/50 uppercase tracking-wider">QA + tech background</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <a href="docs/profiles/qa_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2">QA</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Bug reports, functional/API/regression testing, test documentation.</p>
+                </a>
+                <a href="docs/profiles/backend_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2">Junior Backend</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">API routes, service layer, DB models, exports, async services.</p>
+                </a>
+                <a href="docs/profiles/devops_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2">DevOps</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Env config, runbooks, Docker/systemd examples, local/VPS run docs.</p>
+                </a>
+                <a href="docs/profiles/telegram_bots_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2">Telegram Bots</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Mini Apps, commerce bots, booking flows, alerts, admin handlers.</p>
+                </a>
+                <a href="docs/profiles/combined_ru.md" class="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 rounded-2xl p-5 hover:border-blue-300 dark:hover:border-blue-700 transition">
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2">Combined</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">QA-minded Junior Developer with backend, DevOps and Telegram automation.</p>
+                </a>
+            </div>
+            <div class="mt-5 flex flex-wrap gap-2">
+                <a href="docs/profiles/qa_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">QA EN</a>
+                <a href="docs/profiles/backend_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Backend EN</a>
+                <a href="docs/profiles/devops_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">DevOps EN</a>
+                <a href="docs/profiles/telegram_bots_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Telegram EN</a>
+                <a href="docs/profiles/combined_en.md" class="artifact-link bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Combined EN</a>
             </div>
         </section>
 
@@ -311,6 +433,24 @@
             moonIcon.classList.toggle('hidden');
             localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
         });
+
+        const langButtons = document.querySelectorAll('[data-lang-button]');
+        const setLanguage = (lang) => {
+            html.dataset.lang = lang;
+            html.lang = lang;
+            localStorage.resumeQaLang = lang;
+            langButtons.forEach((button) => {
+                const active = button.dataset.langButton === lang;
+                button.classList.toggle('bg-slate-100', active);
+                button.classList.toggle('dark:bg-slate-700', active);
+                button.classList.toggle('text-slate-700', active);
+                button.classList.toggle('dark:text-slate-200', active);
+                button.classList.toggle('text-slate-500', !active);
+                button.classList.toggle('dark:text-slate-400', !active);
+            });
+        };
+        langButtons.forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.langButton)));
+        setLanguage(localStorage.resumeQaLang || 'ru');
     </script>
 </body>
 </html>
